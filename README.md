@@ -8,9 +8,8 @@ When solving problems numerically, as opposed to analytically, the generated sol
 
 ### Forward Error
 Forward error refers to the error in the output, specifically the difference between the computed solution and the exact solution. Mathematically, it is expressed as:
-\\[
-\\text{Forward Error} = \\|\\hat{x} - x\\|,
-\\]
+`Forward Error = ||x̂ - x||`
+
 where \\( \\hat{x} \\) is the computed solution, and \\( x \\) is the true solution. This error directly measures how far the approximation is from the actual answer. However, forward error alone does not tell us how the algorithm performs with respect to the initial input data.
 
 ### Backward Error
