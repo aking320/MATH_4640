@@ -15,8 +15,9 @@ where \\( \\hat{x} \\) is the computed solution, and \\( x \\) is the true solut
 ### Backward Error
 Backward error, on the other hand, measures how much the input data needs to be perturbed to make the computed solution \\( \\hat{x} \\) an exact solution to the perturbed problem. For a linear system \\( Ax = b \\), the backward error is the smallest perturbation \\( \\Delta A \\) and/or \\( \\Delta b \\) such that:
 \\[
-(A + \\Delta A) \\hat{x} = b + \\Delta b.
+\text{Forward Error} = \\|\\hat{x} - x\\|,
 \\]
+
 
 This metric is crucial for assessing the robustness of numerical algorithms, as it determines whether the computed solution could arise from a slightly altered input problem. In practice, a small backward error indicates that the algorithm is stable, even if the forward error is large in the presence of ill-conditioned problems.
 
