@@ -4,52 +4,41 @@ topic: Backward and Forward Errors
 title: Understanding Backward and Forward Errors in Numerical Computations
 ---
 
-When solving problems numerically, as opposed to analytically, the generated solution is an approximation of the correct solution. The computational errors of the solution of a numerical problem can be separated into two types, called forward errors and backward errors.
+When solving problems numerically, as opposed to analytically, the generated solution is an approximation of the correct solution. The computational errors of the solution of a numerical problem can be separated into forward errors and backward errors.
 
-Consider a function `y = f(x), where f: R → R`
+Consider a function `y = f(x), where f: R → R` In this entire report, functions are assumed to exist only in the real numbers, unless otherwise stated. 
+
 Here, `y` is the true output of the function for the given input `x`. We can also define the following. 
-- `ŷ` (y-hat): The computed output of the function for the input `x`.
-- `x̃` (x-hat): The input value that would produce the computed output `ŷ` in the function `f`. In other words, `ŷ = f(x̃)`
+- `ŷ` (y-hat): The computed output of the function for the input `x`. This is the approximation of the exact answer. 
+- `x̂` (x-hat): The input value that would produce the computed output `ŷ` in the function `f`. In other words, `ŷ = f(x̂)`
 
-
+Now it is possible to define forward error and backward error. 
 
 
 ### Forward Error
-Forward error refers to the error in the output, specifically the difference between the computed solution and the exact solution. Mathematically, it is expressed as:
-
+Forward error refers to the error in the output, specifically the difference between the computed solution and the exact solution. Mathematically, it is given as:
 ```
-Forward Error = ||x̂ - x||
+Forward Error = ||ŷ - y||
 ```
-
-where `x̂` is the computed solution, and `x` is the true solution. This error directly measures how far the approximation is from the actual answer. However, forward error alone does not tell us how the algorithm performs with respect to the initial input data.
+This error directly measures how far the approximation is from the actual answer. 
 
 ### Backward Error
-Backward error, on the other hand, measures how much the input data needs to be perturbed to make the computed solution `x̂` an exact solution to the perturbed problem. For a linear system `Ax = b`, the backward error is the smallest perturbation `ΔA` and/or `Δb` such that:
-
-### Forward Error
-
-The forward error is expressed as:
-
+Backward error, on the other hand, measures how much the input data needs to be perturbed to make the computed solution an exact solution to the perturbed problem. 
 ```
-Forward Error = ||x̂ - x||
+Backward Error = ||x̂ - x||
 ```
+Backward error measures the difference in the inputs, and does not accuratel reflect the error in the solution. However, backward error is usually easier to calculate, as will be shown in later sections. 
 
-This metric is crucial for assessing the robustness of numerical algorithms, as it determines whether the computed solution could arise from a slightly altered input problem. In practice, a small backward error indicates that the algorithm is stable, even if the forward error is large in the presence of ill-conditioned problems.
+### Example: Solution for Square-Root Function
+Consider a function for finding the square root of a positive number, that approximates √2 as 1.4. The forward error is `||ŷ - y|| = ||1.4 - 1.41421...|| ≈ 0.0142.           
 
-### Interplay Between Forward and Backward Errors
-The relationship between forward and backward errors is governed by the conditioning of the problem being solved. The condition number of a problem indicates how sensitive the solution is to small changes in the input data. For a well-conditioned problem, a small backward error typically implies a small forward error. However, in ill-conditioned problems, even a small backward error can result in a large forward error.
+To calculate the backward error, we solve for x̂ using the newly calculated ŷ. $1.4^2 = 1.96$, so the backward error is ||x̂ - x|| = ||1.96 - 2|| = 0.04. 
+
+It was possible to calculate the forward error in this case because we know the value of √2 to many decimals of precision. If we do not have the exact value of y, which in most cases is not known, it is more difficult to calculate the forward error than backward error. 
 
 ### Example: Solving a Linear System
-Consider solving `Ax = b` numerically, where `A` is a matrix, `b` is a vector of known values, and `x` is the solution vector. If `x̂` is the computed solution, the forward error is:
+Consider solving $A\vec{x} = \vec{b}$ numerically, where A is an n by n matrix, b is an n by 1 vector of known values, and x is the solution vector. This case is confusing because x is the solution vector, and the differece in x and its approximation is the forward error. If $\vec{x}_0 = A^{-1}b$ is the exact solution, and $\vec{x}_{approx} is the computed solution, the forward error is:
+$||x_0 - x_{approx}||$
 
-```
-||x̂ - x||
-```
-
-and the backward error involves finding `ΔA` and `Δb` such that:
-
-```
-(A + ΔA) x̂ = b + Δb.
-```
-
-The relative magnitude of these errors depends on both the algorithm used and the condition number of `A`.
+The backward error is calculated as follows:
+$b_{approx} = Ax
