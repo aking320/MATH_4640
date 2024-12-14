@@ -56,7 +56,7 @@ Backward error = $|\vec{b} - \vec{b_{a}}|$
 
 The backward error here is much easier to calculate than the forward error and this is often the case. Here, to evaluate the forward error, we would have to compute the matrix inversion $A^{-1}$, while for the backward error only a matrix multiplication has to be done. This is an example of "backward error analysis" - measuring error in data rather than in results. 
 
-The developer of backward error analysis is James Hardy Wilkinson. Wilkinson was one of the first large contributers to the field of numerical analysis. He studied at the Trinity College in Cambrige, graduating in 1939 with his degree in pure mathematics. After serving in the british military, he worked for the UK National Physical Laboratory, where he worked with Alan Turing on developing some of the the earliest computers. The concept of backward error analysis was introduced in his book "Rounding Errors in Algebraic Processes" (1960). 
+The developer of backward error analysis is James Hardy Wilkinson. Wilkinson was one of the first large contributers to the field of numerical analysis. He studied at the Trinity College in Cambrige, graduating in 1939 with his degree in pure mathematics. After serving in the british military, he worked for the UK National Physical Laboratory, where he worked with Alan Turing on developing some of the the earliest computers. The concept of backward error analysis was introduced in his book "Rounding Errors in Algebraic Processes" (1960). $^{[6]}$
 
 
 ### Part 3: Conditioning 
@@ -72,7 +72,7 @@ To be able to tell when a problem is ill conditioned, we can define the *error m
 Error magnification factor = $\frac{relative forward error}{relative backward error}$ = 
 $\frac{|ŷ - y|}{y} / \frac{|x̂ - x|}{x}$ = $\frac{|f(x̂)-f(x)|}{f(x)} / \frac{|x̂ - x|}{x}$
 
-In some texts, this expression is called the condition number. $^[2,3]$ In some texts, the condition number is described separately, as the limit as |x̂ - x| tends to zero. $^[1,4]$ This can be evaluated as the following: 
+In some texts, this expression is called the condition number. $^{[2,3]}$ In some texts, the condition number is described separately, as the limit as |x̂ - x| tends to zero. $^{[1,4]}$ This can be evaluated as the following: 
 
 The *condition number* k = $\frac{|f'(x)|}{|f(x)|/|x|}$
 
@@ -100,7 +100,7 @@ This gives us
 
 $\frac{||ŷ - y||}{||y||}   ≤   ||A||*||A^{-1}|| * \frac{||E||}{||A||}  $
 
-The important thing to note from this derivation is that the condition number k is the coefficient matrix times its inverse. This will be important 
+The important thing to note from this derivation is that the condition number k is the coefficient matrix times its inverse. $^{[5]}$ This will be important 
 
 ### Part 4: Edge Cases
 
