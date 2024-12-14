@@ -4,8 +4,9 @@ Topic: Backward and Forward Errors
 Title: Understanding Backward and Forward Errors in Numerical Computations
 ---
 
-`[Part 1](#part-1-definitions)`
+[Part 1: Definitions](#part-1-definitions)
 
+[Part 2: Introductory Examples](#part-2-introductory-examples)
 
 
 
@@ -38,7 +39,7 @@ Backward Error = |x̂ - x|
 ```
 Backward error measures the difference in the inputs, and does not accurately reflect the error in the solution. However, backward error is usually easier to calculate, as will be shown in later sections. $^{[1, 2]}$
 
-### Part 2: Examples
+### Part 2: Introductory Examples
 
 **Example: Solution for Square-Root Function**
 
