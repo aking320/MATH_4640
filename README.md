@@ -3,6 +3,12 @@ Name: Alexander King
 Topic: Backward and Forward Errors
 Title: Understanding Backward and Forward Errors in Numerical Computations
 ---
+
+`[Part 1](#part-1-definitions)`
+
+
+
+
 ### Part 1: Definitions
 When solving problems numerically, as opposed to analytically, the generated solution is an approximation of the correct solution. The computational errors of the solution of a numerical problem can be separated into forward errors and backward errors. 
 
@@ -142,7 +148,7 @@ output: backward error, cond_A, forward error
 ```
 
 
-References:
+### References
 1. Notes on error analysis. (n.d.). http://people.whitman.edu/~hundledr/courses/M467F06/ConvAndError2.pdf
 2. Numerics and error analysis. (n.d.-b). https://graphics.stanford.edu/courses/cs205a-13-fall/assets/notes/chapter1.pdf
 3. Verschelde, J. (2022, August 29). Numerical Conditioning. http://homepages.math.uic.edu/~jan/mcs471/conditioning.pdf
