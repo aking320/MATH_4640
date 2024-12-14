@@ -127,7 +127,7 @@ $x^2-2x+0.9999 = (x-0.99)(x-1.01)$
 
 Even though the function changed by 0.0001, the roots changed by 0.01. 
 When we try to calculate the condition number, we find that 
-The condition number of this problem is undefined, some texts would say infinite, at x=1, since
+The condition number of this problem is undefined, some texts would say infinite $^{[1, 2]}$ , at x=1, since
  f(1) = f'(1) = 0. 
 
  The point being made with the previous example is that the condition number is not always calculable, and can be undefined for specific roots of a function. When k is infinite, then the problem is called "ill posed". 
