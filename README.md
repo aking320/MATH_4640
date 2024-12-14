@@ -99,7 +99,7 @@ k = $\frac{|f'(x)|}{|f(x)|/|x|}$ = $\frac{|0.5x^{-0.5}|}{|x^{0.5}|/|x|}$ = 0.5
 
 So we can expect that the chance in input to the change in output is 2 to 1, which is not very significant. This problem is well conditioned. It then becomes possible to estimate the forward error in a result by onl doing backward error analysis, if the condition number can be found. 
 
-It is also possible to show that the condition number for a linear system is the coefficient matrix times its inverse. This is often the way it is calculated. 
+It is also possible to show that the condition number for a linear system is the coefficient matrix times its inverse. This is often the way it is calculated. in this case, the errors will be given in terms of the norm of the matrix. 
 Suppose we wish to compute the linear system y = Ax, but we instead compute a small error, and the computed result is $ŷ = (A+E)x$. 
 
 The absolute forward error is:
