@@ -8,6 +8,13 @@ Title: Understanding Backward and Forward Errors in Numerical Computations
 
 [Part 2: Introductory Examples](#part-2-introductory-examples)
 
+[Part 3: Conditioning](#part-3-conditioning)
+
+[Part 4: Edge Cases](#part-4-edge-cases)
+
+[Part 5: Example Code](#part-5-example-code)
+
+[References](#references)
 
 
 ### Part 1: Definitions
